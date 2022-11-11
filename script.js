@@ -1,10 +1,16 @@
 (function () {
+
+  console.log('--------------------------------');
+  console.log('| Start:', new Date());
+  console.log('| navigator:', navigator);
+  console.log('--------------------------------');
+
   if (
-    !"mediaDevices" in navigator ||
-    !"getUserMedia" in navigator.mediaDevices
+    !"mediaDevices" in navigator
+    // || !"getUserMedia" in navigator?.mediaDevices
   ) {
-    alert("Camera API is not available in your browser");
-    return;
+    
+    return alert("Camera API is not available in your browser");
   }
 
   // get page elements
@@ -34,7 +40,7 @@
   };
 
   // use front face camera
-  let useFrontCamera = true;
+  let useFrontCamera = false;
 
   // current video stream
   let videoStream;
